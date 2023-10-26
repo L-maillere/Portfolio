@@ -1,0 +1,17 @@
+.page {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  opacity: 0; // On commence avec une opacité de 0 pour que la page soit initialement cachée
+  transition: opacity 1s; // Transition d'opacité sur 1 seconde
+  background-color: black;
+}
+
+.page-enter, .page-exit-active {
+  opacity: 0; // Lors de l'entrée, l'opacité est à 0 (cachée)
+}
+
+.page-enter-active, .page-exit {
+  opacity: 1; // Lorsque l'entrée est terminée, ou lors de la sortie, l'opacité est à 1 (visible)
+}

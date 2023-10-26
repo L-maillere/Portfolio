@@ -1,0 +1,9 @@
+@import "../style/utils/variables.scss";
+
+@import "../style/base/base.scss";
+@import "../style/base/typography.scss";
+
+@import "../components/Header/Header";
+@import "../components/Footer/Footer";
+
+@import "./transitions.scss";

@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(24, 26, 31, 0));
+  &_logo {
+    margin-left: 6.8vw;
+    width: 300px;
+  }
+  &_nav {
+    margin-right: 6.8vw;
+    display: flex;
+    &:hover a {
+      opacity: 0.35;
+    }
+    & a {
+      font-size: 1.3rem;
+      margin-left: 32px;
+      transition: color 0.2s ease, opacity 0.2s ease;
+      opacity: 1;
+      &:hover {
+        opacity: 1;
+        color: $primary-color;
+      }
+    }
+  }
+}
