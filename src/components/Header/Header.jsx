@@ -8,7 +8,6 @@ function Header() {
         <img src={logo} alt='logo'/>
       </Link>
       <nav className='header_nav'>
-        <Link to='/About'>About</Link>
         <Link to='/Portfolio'>Portfolio</Link>
         <Link to='/Contact'>Contact</Link>
       </nav>

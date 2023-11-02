@@ -1,0 +1,17 @@
+#pixi-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: -1;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  & canvas {
+    position: absolute;
+    z-index: -1;
+  }
+  &.fade-out {
+    opacity: 0;  
+  }
+}

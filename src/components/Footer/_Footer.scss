@@ -1,0 +1,46 @@
+.footer {
+  position: relative;
+  height: 100px;
+  background: linear-gradient(0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.5) 30%,
+    rgba(0, 0, 0, 0.3) 60%,
+    rgba(0, 0, 0, 0) 100%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  &_social {
+    position: absolute;
+    display: flex;
+    margin-left: 6.8vw;
+  }
+  & h4 {
+    margin: auto;
+    text-align: center;
+  }
+  &_icon {
+    width: 40px;
+    height: 40px;
+    transition: opacity 0.3s ease;
+    &.cv {
+      position: absolute;
+      right: 6.8vw;
+      bottom: 0;
+      height: 100px;
+    }
+    &.linkedin {
+      margin-left: 20px;
+    }
+    &.blue {
+      position: absolute;
+      top: 0;
+      opacity: 0;
+    }
+  }
+  & a:hover img.footer_icon {
+    opacity: 0;
+  }
+  & a:hover img.footer_icon.blue {
+      opacity: 1;
+  }
+}

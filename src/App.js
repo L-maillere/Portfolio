@@ -7,10 +7,14 @@ import About from './pages/About/About';
 import Portfolio from './pages/Portfolio/Portfolio';
 import Contact from './pages/Contact/Contact';
 import Error from './pages/Error/Error';
+import PixiComponent from './components/UtilsComponents/PixiComponent/PixiComponent';
+import ScrollToTop from './components/UtilsComponents/ScrollToTop/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <PixiComponent />
+      <ScrollToTop />
       <Header />
         <main>
           <Routes>
@@ -21,7 +25,7 @@ function App() {
             <Route path="*" element={<Error />} />
           </Routes>
         </main>
-        <Footer />
+      <Footer />
     </Router>
   );
 }

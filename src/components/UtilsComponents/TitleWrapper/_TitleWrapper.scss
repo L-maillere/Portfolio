@@ -1,0 +1,28 @@
+.title-wrapper {
+  display: flex;
+  flex-direction: row;
+  &.h1 {
+    transform: translateX(0);
+   .slash {
+      height: 60px;
+    }
+  }
+  &.h2 {
+    transform: translateX(-13px);
+    & .slash {
+      height: 48px;
+    }
+  }
+  &.h3 {
+    transform: translateX(-7px);
+    .slash {
+      height: 28px;
+    }
+  }
+  &.h4 {
+    transform: translateX(0);
+    .slash {
+      height: 28px;
+    }
+  }
+}

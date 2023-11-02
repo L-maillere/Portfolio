@@ -1,9 +1,16 @@
 .header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100px;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(24, 26, 31, 0));
+  background: 
+    linear-gradient(180deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.5) 30%,
+      rgba(0, 0, 0, 0.3) 60%,
+      rgba(0, 0, 0, 0) 100%);
+  z-index: 2;
   &_logo {
     margin-left: 6.8vw;
     width: 300px;
@@ -17,11 +24,12 @@
     & a {
       font-size: 1.3rem;
       margin-left: 32px;
-      transition: color 0.2s ease, opacity 0.2s ease;
-      opacity: 1;
+      transition: opacity 0.3s ease;
       &:hover {
         opacity: 1;
-        color: $primary-color;
+      }
+      &:first-child {
+        margin-left: 0;
       }
     }
   }

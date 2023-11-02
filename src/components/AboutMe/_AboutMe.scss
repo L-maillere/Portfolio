@@ -1,0 +1,65 @@
+.about-me {
+  position: relative;
+  top: -100px;
+  width: 80vw;
+  margin: auto;
+  & h2 {
+    margin-bottom: 20px;
+  }
+  &_my-story {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    & .my-picture {
+      position: absolute;
+      right: 0;
+      width: 47.5%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px 0 0 15px;
+      background-color: $dark-theme;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+      border-radius: 15px;
+    }
+    &_text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 47.5%;
+      height: fit-content;
+      padding: 15px 25px 0;
+      background-color: $dark-theme;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+      border-radius: 15px;
+      & p {
+
+        line-height: 1.75;
+        text-align: justify;
+      }
+      & a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        line-height: 60px;
+        font-weight: 600;
+        border-radius: 10px;
+        background-color: $dark-theme;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+        margin: 25px 0;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          scale: 1.1;
+          background-color: $primary-color;
+          box-shadow: 0px 0px 15px rgba(7, 95, 228, 1);
+        }
+      }
+    }
+  }
+  &_skills {
+    height: 50%;
+    width: 100%;
+    padding: 20px;
+  }
+}
