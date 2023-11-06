@@ -3,55 +3,76 @@ import { initPixiShapes } from './pixiShapes';
 import { useLocation } from 'react-router-dom';
 
 function PixiComponent() {
-  const appRef = useRef(null);
-  const location = useLocation();
-  const prevPathname = useRef(location.pathname);
-  const containerRef = useRef(null); // Ajoutez cette référence pour le conteneur div
+  const appRef = useRef(null); // Référence à l'application Pixi
+  const containerRef = useRef(null); // Référence au div conteneur de l'application Pixi
+  const location = useLocation(); // Obtient l'objet de localisation de React Router
+  const prevPathname = useRef(location.pathname); // Stocke le chemin précédent
+
+  // Initalistion de l'application et configurons des Eventlisteners pour les redimensionnements,
+  // les changements d'orientation et les changements de page
+  useEffect(() => {
+    // Fonction qui gère le redimensionnement de l'application
+    const handleResize = () => {
+      if (appRef.current && appRef.current.renderer) {
+        const newWidth = document.documentElement.clientWidth;
+        const newHeight = document.documentElement.offsetHeight;
+        appRef.current.renderer.resize(newWidth, newHeight);
+      }
+    };
+
+    const { app } = initPixiShapes(); // Initialise l'application Pixi
+    appRef.current = app; // Stocke l'application Pixi dans la référence
+    containerRef.current.appendChild(app.view); // Ajoute le canvas de l'application Pixi au div conteneur
+
+    // Ajouts des Eventlisteners pour le redimensionnement et les changements d'orientation
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
+
+      // Nettoyage de l'application PIXI
+      if (appRef.current) {
+        appRef.current.destroy(true);
+      }
+    };
+  }, []);
 
   useEffect(() => {
-    const { app, cleanup } = initPixiShapes();
-    appRef.current = app;
-
-    if (prevPathname.current === location.pathname) {
+    // Si le chemin n'a pas changé, ne fait rien
+    if (!appRef.current || location.pathname === prevPathname.current) {
       return;
     }
 
+     // Mémorise le nouveau chemin
     prevPathname.current = location.pathname;
 
-    // Ajoutez la classe 'fade-out' pour commencer la transition d'opacité
+    // Déclenche la transition d'opacité
     containerRef.current.classList.add('fade-out');
 
     const timeoutId = setTimeout(() => {
-        cleanup();
-        if (appRef.current) {
-            appRef.current.stage.children.forEach(child => {
-                child.destroy();
-            });
-            appRef.current.ticker.stop();
-            appRef.current.destroy(true);
-        }
+      // Nettoie l'application PIXI existante
+      if (appRef.current) {
+        appRef.current.destroy(true);
+      }
 
-        const { app: newApp } = initPixiShapes();
-        appRef.current = newApp;
+      // Recrée l'application PIXI
+      const { app } = initPixiShapes();
+      appRef.current = app;
+      containerRef.current.appendChild(app.view);
 
-        // Retirez la classe 'fade-out' après que l'application a été rechargée
-        containerRef.current.classList.remove('fade-out');
-    }, 300); // Assurez-vous que ce délai correspond à la durée de la transition CSS
+      // Retire la classe 'fade-out' pour terminer la transition
+      containerRef.current.classList.remove('fade-out');
+    }, 300);
 
-    return () => {
-        clearTimeout(timeoutId);
-        if (appRef.current) {
-            appRef.current.stage.children.forEach(child => {
-                child.destroy();
-            });
-            appRef.current.ticker.stop();
-            appRef.current.destroy(true);
-        }
-        cleanup();
-    };
-  }, [location.pathname]);
+  // Fonction de nettoyage si le composant est démonté pendant la transition
+  return () => {
+    clearTimeout(timeoutId);
+  };
+  }, [location.pathname]); // Se déclenche lorsque location.pathname change
 
-  // Utilisez `containerRef` pour la référence du div
+  // Rendu du div conteneur de l'application Pixi
   return <div id="pixi-container" ref={containerRef}></div>;
 }
 

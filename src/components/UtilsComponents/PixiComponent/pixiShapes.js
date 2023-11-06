@@ -115,20 +115,5 @@ export function initPixiShapes() {
       creature.draw();
     });
   });
-
-  const handleResize = () => {
-    if (app && app.renderer) {
-        app.renderer.resize(window.innerWidth, document.documentElement.offsetHeight);
-    }
-  };
-
-  window.addEventListener("resize", handleResize);
-
-  // Retournez la fonction de nettoyage
-  return {
-    app: app, // l'application PIXI
-    cleanup: () => {
-        window.removeEventListener("resize", handleResize); // la fonction de nettoyage
-    }
-  };
+  return { app };
 }

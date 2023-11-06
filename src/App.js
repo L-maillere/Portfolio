@@ -6,6 +6,7 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Portfolio from './pages/Portfolio/Portfolio';
 import Contact from './pages/Contact/Contact';
+import ProjectDetails from './pages/ProjectDetails/ProjectDetails';
 import Error from './pages/Error/Error';
 import PixiComponent from './components/UtilsComponents/PixiComponent/PixiComponent';
 import ScrollToTop from './components/UtilsComponents/ScrollToTop/ScrollToTop';
@@ -22,6 +23,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/projects/:projectUrl" element={<ProjectDetails />} />
             <Route path="*" element={<Error />} />
           </Routes>
         </main>

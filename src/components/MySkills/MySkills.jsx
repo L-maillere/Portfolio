@@ -16,10 +16,10 @@ function MySkills() {
 
   return (
     <section className="my-skills">
-      <SkillsSection title='My Principal Skills' className='principal'>
+      <SkillsSection title='Mes compétences principales' className='principal'>
         {renderSkillCategory('Frontend', frontendSkills, 'principal')}
       </SkillsSection>
-      <SkillsSection title='My Other Skills' className='other'>
+      <SkillsSection title='Mes autres compétences' className='other'>
         {otherSkillsCategories.map(category => 
           renderSkillCategory(category.title, category.skills, 'other' , category.title)
         )}
