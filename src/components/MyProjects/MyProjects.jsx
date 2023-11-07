@@ -26,7 +26,7 @@ function MyProjects() {
 
   return (
     <div className="my-projects">
-      <TitleWrapper title="Mes projets" level="h2" />
+      <TitleWrapper title="Mes projets" level="h1" />
       <div className="my-projects_slider-wrapper">
         <NavigationArrows 
           totalSlides={projectsData.length}

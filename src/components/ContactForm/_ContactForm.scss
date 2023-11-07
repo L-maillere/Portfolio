@@ -1,0 +1,90 @@
+.contact-form {
+  position: relative;
+  width: 80vw;
+  height: calc(100vh - 200px);
+  margin: 50px auto 0;
+  & .title-wrapper {
+    margin-bottom: 20px;
+  }
+  & form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: fit-content;
+    border-radius: 15px;
+    background-color: $dark-theme;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+    padding: 20px;
+    & .text-and-submit {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      margin: -20px 20px 20px 50%;
+      padding: 20px;
+      width: calc(50% - 20px);
+      border-radius: 15px;
+      background-color: $dark-theme;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+      & textarea {
+        display: flex;
+        flex-direction: column;
+        resize: none;
+        outline: none;
+        width: 100%;
+        min-height: 200px;
+        border: 1px solid $primary-color;
+        border-radius: 15px;
+        background-color: $dark-theme;
+        padding: 10px;
+      }
+      & select {
+        background-color: $dark-theme;
+        border: 1px solid $primary-color;
+        border-radius: 5px;
+        color: white;
+        padding: 5px;
+        outline: none;
+        margin-bottom: 10px;
+      }
+      & .consent {
+        display: flex;
+        margin-top: 10px;
+        width: 100%;
+        & input {
+          margin: 0;
+        }
+        & label {
+          margin: 0 10px;
+        }
+        margin-bottom: 10px;
+      }
+    }
+    & label {
+      margin-bottom: 5px;
+    }
+    & input {
+      margin-bottom: 20px;
+      border: 1px solid $primary-color;
+      border-radius: 5px;
+      background-color: $dark-theme;
+      outline: none;
+      padding: 5px;
+    }
+  }
+  & button {
+    width: 200px;
+    line-height: 60px;
+    font-weight: 600;
+    border-radius: 10px;
+    background-color: $dark-theme;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+    transition: all 0.3s ease-in-out;
+    border: none;
+    margin: 0 auto;
+    &:hover {
+      scale: 1.1;
+      background-color: $primary-color;
+      box-shadow: 0px 0px 15px rgba(7, 95, 228, 1);
+    }
+  }
+}

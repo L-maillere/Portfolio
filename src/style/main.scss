@@ -3,13 +3,16 @@
 @import "../style/base/base.scss";
 @import "../style/base/typography.scss";
 
+@import "../pages/ProjectDetails/ProjectDetails";
+@import "../pages/Error/Error";
+
 @import "../components/Header/Header";
 @import "../components/Footer/Footer";
 @import "../components/Banner/Banner";
 @import "../components/AboutMe/AboutMe";
 @import "../components/MySkills/MySkills";
 @import "../components/MyProjects/MyProjects";
-@import "../pages/ProjectDetails/ProjectDetails";
+@import "../components/ContactForm/ContactForm";
 
 @import "../components/UtilsComponents/PixiComponent/PixiComponent";
 @import "../components/UtilsComponents/TitleWrapper/TitleWrapper";

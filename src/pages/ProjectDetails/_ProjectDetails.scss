@@ -1,12 +1,15 @@
 .project-details {
+  position: relative;
   width: 80vw;
-  margin: 50px auto;
+  margin: 110px auto;
   background-color: $dark-theme;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
   border-radius: 15px;
   padding: 20px;
   & .title-wrapper {
     &.h1 {
+      position: absolute;
+      top : -80px;
       margin: 0 0 20px;
     }
     &.h2 {

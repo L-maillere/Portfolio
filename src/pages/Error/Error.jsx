@@ -1,8 +1,9 @@
 function Error() {
   return (
-    <div>
-      <h1>Error</h1>
-    </div>
+    <section className="error">
+      <h1>404</h1>
+      <h2>Page non trouvée</h2>
+    </section>
   );
 }
 

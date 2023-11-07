@@ -1,0 +1,19 @@
+.error {
+  width: 100vw;
+  height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 1px 1px 40px rgba(0, 0, 0, 1);
+  & h1, & h2 {
+    font-size: 20rem;
+    font-weight: 700;
+    color: $primary-color;
+    line-height: 1;
+  }
+  & h2 {
+    font-size: 5rem;
+    color: white;
+  }
+}
