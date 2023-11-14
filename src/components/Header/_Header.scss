@@ -33,4 +33,59 @@
       }
     }
   }
+  &_toggle {
+    display: none;
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    align-items: normal;
+    justify-content: space-evenly;
+    &_logo {
+      margin: auto;
+      width: 150px;
+    }
+    &_nav-wrapper {
+      position: absolute;
+      right: 25px;
+      top: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: $dark-theme;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+      border-radius: 15px;
+      &.is-visible {
+        align-items: flex-end;
+        box-shadow: 0px 0px 15px rgba(7, 95, 228, 1);
+      }
+    }
+    &_nav {
+      display: none;
+      flex-direction: column;
+      padding: 10px;
+      margin: 0;
+      & a {
+        margin: 0;
+      }
+      &.is-visible {
+        display: flex;
+        position: relative;
+        right: 0;
+      }
+    }
+    &_toggle {
+      display: block;
+      padding: 10px;
+      width: 50px;
+      height: 50px;
+      z-index: 2;
+    }
+  }
 }

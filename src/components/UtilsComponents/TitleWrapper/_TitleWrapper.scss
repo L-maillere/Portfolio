@@ -26,3 +26,33 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .title-wrapper {
+    &.h1 {
+      transform: translateX(-14.25px);
+      .slash {
+        height: 45px;
+      }
+    }
+    &.h2 {
+      transform: translateX(-9.75px);
+      .slash {
+        height: 36px;
+      }
+    }
+    &.h3 {
+      transform: translateX(-5.25px);
+      .slash {
+        height: 21px;
+      }
+    }
+    &.h4 {
+      transform: translateX(0);
+      .slash {
+        height: 21px;
+      }
+    }
+  }
+  
+}

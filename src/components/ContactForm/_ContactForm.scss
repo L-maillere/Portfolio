@@ -88,3 +88,21 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .contact-form {
+    width: 100%;
+    height: fit-content;
+    & form {
+      width: 100%;
+      border-radius: 0;
+      & .text-and-submit {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        box-shadow: none;
+      }
+    }
+  }
+}
