@@ -1,5 +1,5 @@
 import TitleWrapper from '../UtilsComponents/TitleWrapper/TitleWrapper';
-import tosti from '../../assets/tosti.jpg';
+import photoCV from '../../assets/photo_cv.jpg';
 import { Link } from 'react-router-dom';
 
 function AboutMe() {
@@ -23,7 +23,7 @@ function AboutMe() {
           </p>
           <Link to="/portfolio" className="button">Mon portfolio</Link>
         </div>
-        <img src={tosti} alt="tosti" className="my-picture"/>
+        <img src={photoCV} alt="tosti" className="my-picture"/>
       </div>
       </div>
     </section>
