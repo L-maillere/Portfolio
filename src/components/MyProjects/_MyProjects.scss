@@ -45,7 +45,8 @@
     right: 0;
     top: 0;
     width: 30%;
-    height: 100%;
+    min-height: 100%;
+    max-height: 130%;
     z-index: 1;
     background-color: $dark-theme;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
@@ -53,11 +54,11 @@
     padding: 20px;
     & a {
       position: relative;
-      margin: 0 auto;
+      margin: 20px auto 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 200px;
+      width: 150px;
       line-height: 60px;
       font-weight: 600;
       border-radius: 10px;
@@ -68,6 +69,19 @@
         scale: 1.1;
         background-color: $primary-color;
         box-shadow: 0px 0px 15px rgba(7, 95, 228, 1);
+      }
+    }
+    & p {
+      max-height: 80%;
+      overflow-y: auto;
+      &::-webkit-scrollbar {
+        width: 1px;
+      }
+      &::-webkit-scrollbar-track {
+        background: black;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $primary-color;
       }
     }
   }
@@ -107,11 +121,16 @@
     border-radius: 0 0 14px 14px;
     overflow-x: auto;
     overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     padding-left: calc(50% - 75px);
     padding-right: calc(50% - 75px);
     transition: transform 0.3s ease-out;
     align-items: center;
     z-index: 3;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     img {
       width: 150px;
       padding: 10px;
@@ -126,10 +145,11 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .my-projects {
     width: 100%;
     flex-direction: column;
+    margin: 118px auto 50px;
     &_slider-wrapper, &_description {
       width: 100%;
       border-radius: 0;
@@ -146,11 +166,11 @@
     }
     &_thumbnail-bar {
       border-radius: 0;
-      padding-left: calc(50% - 37.5px);
-      padding-right: calc(50% - 37.5px);
+      padding-left: calc(50% - 11.72vw);
+      padding-right: calc(50% - 11.72vw);
       & img {
         padding: 5px;
-        width: 75px;
+        width: 23.44vw;
       }
     }
     &_navigation {
@@ -158,8 +178,8 @@
       & button {
         padding: 5px;
         & img {
-          width: 20px;
-          height: 20px;
+          width: 6.25vw;
+          height: 6.25vw;
           &:hover {
             transform: none;
           }

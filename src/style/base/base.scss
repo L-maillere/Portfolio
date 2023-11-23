@@ -4,12 +4,23 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
+html, body, #root {
+  width: 100%;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+  &::-webkit-scrollbar-track {
+    background: none;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $primary-color;
+  }
 }
 
 html {
   background-color: $dark-theme;
+  scroll-behavior: smooth;
 }
 
 a {

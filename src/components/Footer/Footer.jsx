@@ -4,6 +4,7 @@ import LinkedinIcon from '../../assets/svg/linkedin.svg';
 import LinkedinIconBlue from '../../assets/svg/linkedin-blue.svg';
 import CvIcon from '../../assets/svg/cv.svg';
 import CvIconBlue from '../../assets/svg/cv-blue.svg';
+import CVpdf from '../../assets/CV.pdf';
 
 function Footer() {
   return (
@@ -19,7 +20,7 @@ function Footer() {
             <img src={LinkedinIconBlue} alt="github" className="footer_icon linkedin blue"/>
           </a>
         </div>
-        <a href='#empty'>
+        <a href={CVpdf} target='_blank' rel='noreferrer'>
           <img src={CvIcon} alt="cv" className="footer_icon cv"/>
           <img src={CvIconBlue} alt="cv" className="footer_icon cv blue"/>
         </a>

@@ -6,9 +6,7 @@
   height: 100px;
   background: 
     linear-gradient(180deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 0.5) 30%,
-      rgba(0, 0, 0, 0.3) 60%,
+      rgba(0, 0, 0, 0.8) 0%,
       rgba(0, 0, 0, 0) 100%);
   z-index: 2;
   &_logo {
@@ -43,7 +41,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .header {
     align-items: normal;
     justify-content: space-evenly;

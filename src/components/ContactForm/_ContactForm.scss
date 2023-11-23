@@ -1,7 +1,7 @@
 .contact-form {
   position: relative;
   width: 80vw;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 250px);
   margin: 50px auto 0;
   & .title-wrapper {
     margin-bottom: 20px;
@@ -89,7 +89,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .contact-form {
     width: 100%;
     height: fit-content;

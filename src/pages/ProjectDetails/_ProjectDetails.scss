@@ -107,10 +107,24 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .project-details {
     width: 100%;
     border-radius: 0;
+    & .title-wrapper {
+      &.h1 {
+        margin: 0 -20px;
+        top: -70px;
+      }
+    }
+    &_img {
+      img {
+        filter: blur(3px);
+      }
+      &-buttons {
+        opacity: 1;
+      }
+    }
     &_tags {
       margin: 20px 0 50px;
       & span {
